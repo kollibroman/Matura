@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/* Rekurencyjnie
- static int Silnia_z_Liczby(int liczba)
+ static unsigned long long int Silnia_z_Liczby(int liczba)
     {
         if(liczba == 0)
         {
@@ -18,21 +17,7 @@ using namespace std;
         cout << Silnia_z_Liczby(liczba);
         return 0;
     }
-*/
 
-int main()
-{
-    int liczba, tymczasowa_liczba, wynik;
-    cout << "podaj Liczbe: ";
-    cin >> liczba;
 
-    for(int i = liczba; i >= 0; i--)
-    {
-        tymczasowa_liczba = liczba - 1;
-        wynik = liczba * tymczasowa_liczba;
-    }
-    cout << wynik;
-    return 0;
-}
    
 
