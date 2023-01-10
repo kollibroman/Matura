@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
-#include<map>
 using namespace std;
 
 vector<int> rozklad_na_czynniki(int n)      //TODO: policzyc dzielniki i znalezc ich najwieksza liczbe i dodac do zmiennej
@@ -22,80 +21,77 @@ vector<int> rozklad_na_czynniki(int n)      //TODO: policzyc dzielniki i znalezc
 
 int main()
 {
-    string linie2;  //4.2
+    string linia;  
     int liczby_rozne = 0;
-    vector<string> liczby;
-    vector<int> liczby_int;
-    vector<int> czynniki;
-    vector<string> czynnikowe_liczby; 
-    map<string, string> pary_liczb;
+    int MAXczynniki = 0;
+    int MAX_ilosc = 0;
+    int ilosc_czynnikow = 0;
+    int liczba_z_czynnikami;
+    int liczba_z_czynnikami2;
 
-    ofstream of_plik2("liczby_z_cznnikami.txt");
-    ifstream if_plik2("liczby_z_cznnikami.txt");
-
-    //4.2
-    for(int j = 0; j < liczby.size() - 1; j++) //konwersja
-    {
-        liczby_int.push_back(stoi(liczby[j]));
-    }
-
-    for (int i = 0; i < liczby_int.size(); i++) // zapisanie w pliku liczb razem z ich czynnikami
-    {
-        of_plik2 << liczby_int[i] << " ";
-        czynniki = rozklad_na_czynniki(liczby_int[i]);
-
-        for(int j = 0; j < czynniki.size(); j++)
-        {
-            of_plik2 << czynniki[j] << " ";
-        }
-
-        of_plik2 << "\n";
-        czynniki.clear();
-    }
+    vector<int> liczby;
     
-    if(!if_plik2.good())
+    ifstream plik("przyklad.txt");
+
+    if(!plik.good())
     {
-        cout << "Dupa" << endl;
+        cout << "plik nie dziala" << endl;
     }
 
-    while (!if_plik2.eof())
+    while (!plik.eof())
     {
-        getline(if_plik2, linie2);
+        getline(plik, linia);
+
+        if(linia != "")
+        {
+            liczby.push_back(stoi(linia));
+        }
+    }
+
+
+    for(int i = 0; i <= 200; i++)
+    {
+        vector<int> liczba = rozklad_na_czynniki(liczby[i]);
         
-        if(linie2 != "")
+        for(int j = 0; j < liczba.size(); j++)
         {
-            czynnikowe_liczby.push_back(linie2);
+            ilosc_czynnikow++;
         }
-    }
-    
-    for (int i = 0; i < czynnikowe_liczby.size(); i++)
-    {
-        string temp = czynnikowe_liczby[i];
 
-        for(int j = i+1; j < temp.length() - 1; j++)
+        if(ilosc_czynnikow > MAX_ilosc)
         {
-            if (temp[i] != ' ' && temp[j] != ' ')
+            liczba_z_czynnikami = liczby[i];
+            MAX_ilosc = ilosc_czynnikow;
+        }
+
+        ilosc_czynnikow = 0;
+    }
+
+
+    for(int i = 0; i <= 200; i++)                                  //Maksymalna ilosc roznych liczb w rozkladzie
+    {
+        vector<int> liczba2 = rozklad_na_czynniki(liczby[i]);
+
+        for(int j = 0; j < liczba2.size(); j++)
+        {
+            if(liczba2[j] != liczba2[j - 1])
             {
-                if(temp[i] != temp[j])
-                {
-                    liczby_rozne++;
-                }
+                liczby_rozne++;
             }
         }
 
-        liczby_rozne--;     // odejmujemy pierwsza kolumne
-        pary_liczb[temp] = liczby_rozne;
-        liczby_rozne = 0; //zerowanie aby przejsc do nastepnej
-    }
+        if(liczby_rozne > MAXczynniki)
+        {
+            liczba_z_czynnikami2 = liczby[i];
+            MAXczynniki = liczby_rozne;
+        }
 
-    for(int i = 0; i < pary_liczb.size(); i++)  //czyszczenie pliku
-    {
-        of_plik2 << " ";
-    }
+        liczby_rozne = 0;
+    }   
 
-    for (int i = 0; i < pary_liczb.size(); i++)
-    {
-        string temp = czynnikowe_liczby[i];
-        of_plik2 << temp << pary_liczb[temp] << endl;
-    }
+
+    cout << liczba_z_czynnikami << " " << MAX_ilosc << endl;
+    cout << liczba_z_czynnikami2 << " " << MAXczynniki << endl;
+
+    return 0;
 }
