@@ -23,6 +23,7 @@ int main()
     if(!plik.good())
     {
         cout << "Dupa" << endl;
+        return -1;
     }
 
     while (!plik.eof())

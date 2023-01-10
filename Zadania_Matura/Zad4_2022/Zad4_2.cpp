@@ -3,9 +3,11 @@
 #include<vector>
 using namespace std;
 
-vector<int> rozklad_na_czynniki(int n)      //TODO: policzyc dzielniki i znalezc ich najwieksza liczbe i dodac do zmiennej
-{                                           // Wrzucic w osobny plik btw
-    vector<int> czynniki;                   // aby sprawdzic dzielniki rozne wystarczy poprzedni z nastepnym porownywac i do zmiennej dodawac
+//Poprawione i dzialajoce :)))
+
+vector<int> rozklad_na_czynniki(int n)      
+{                                           
+    vector<int> czynniki;                  
     int prime = 2;
     while (n > 1)
     {
@@ -36,6 +38,7 @@ int main()
     if(!plik.good())
     {
         cout << "plik nie dziala" << endl;
+        return -1;
     }
 
     while (!plik.eof())
