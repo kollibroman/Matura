@@ -2,3 +2,5 @@ a.out
 palindorm
 silnia
 *.exe
+.vs
+*.obj
