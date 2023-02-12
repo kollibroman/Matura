@@ -4,3 +4,4 @@ silnia
 *.exe
 .vs
 *.obj
+.vscode/c_cpp_properties.json
