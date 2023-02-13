@@ -155,5 +155,7 @@ int main()
     of_plik << "4_3:" << najcz_litera << " " << Max_powtorek << endl;
     of_plik << "4_4: "<< slowo << endl;
 
+    of_plik.close();
+
     return 0;
 }
