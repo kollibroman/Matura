@@ -10,6 +10,7 @@ int main()
     string slowo = "";
     string linia;
     ifstream plik("instrukcje.txt");
+    ofstream of_plik("wyniki4.txt");
     vector<string> instrukcje;
 
     vector<char> alfabet = {'A','B','C','D','E','F',
@@ -18,12 +19,12 @@ int main()
 
     vector<string> ciagi_instrukcji;
     string slowo_ciagu;
-    int dlugosc_ciagu = 0;
+    int dlugosc_ciagu = 1;
     int Max_dlugosc = 0;
 
     vector<char> litery;
     char najcz_litera;
-    int ilosc_powtorek = 0;
+    int ilosc_powtorek = 1;
     int Max_powtorek = 0;
 
     vector<string> komendy = {"DOPISZ", "ZMIEN", "USUN", "PRZESUN"};
@@ -116,7 +117,7 @@ int main()
                 Max_dlugosc = dlugosc_ciagu;
             }
 
-            dlugosc_ciagu = 0;
+            dlugosc_ciagu = 1;
         }   
     }
 
@@ -138,16 +139,21 @@ int main()
                 Max_powtorek = ilosc_powtorek;
             }
 
-            ilosc_powtorek = 0;
+            ilosc_powtorek = 1;
         }
         
     }
 
 
     cout << "4_1: " << slowo.length() << endl;
-    cout << "4_2:" << slowo_ciagu << " " << Max_dlugosc + 1 << endl;
-    cout << "4_3:" << najcz_litera << " " << Max_powtorek + 1 << endl;
+    cout << "4_2:" << slowo_ciagu << " " << Max_dlugosc << endl;
+    cout << "4_3:" << najcz_litera << " " << Max_powtorek << endl;
     cout << "4_4: "<< slowo << endl;
+
+    of_plik << "4_1: " << slowo.length() << endl;
+    of_plik << "4_2:" << slowo_ciagu << " " << Max_dlugosc << endl;
+    of_plik << "4_3:" << najcz_litera << " " << Max_powtorek << endl;
+    of_plik << "4_4: "<< slowo << endl;
 
     return 0;
 }
