@@ -107,6 +107,7 @@ int main()
         {
             dlugosc_ciagu++;
         }
+
         else
         {
             if(dlugosc_ciagu > Max_dlugosc)
@@ -114,6 +115,8 @@ int main()
                 slowo_ciagu = ciagi_instrukcji[i];
                 Max_dlugosc = dlugosc_ciagu;
             }
+
+            dlugosc_ciagu = 0;
         }   
     }
 
@@ -134,14 +137,16 @@ int main()
                 najcz_litera = litery[i];
                 Max_powtorek = ilosc_powtorek;
             }
+
+            ilosc_powtorek = 0;
         }
         
     }
 
 
     cout << "4_1: " << slowo.length() << endl;
-    cout << "4_2:" << slowo_ciagu << " " << Max_dlugosc - 1 << endl;
-    cout << "4_3:" << najcz_litera << " " << Max_powtorek << endl;
+    cout << "4_2:" << slowo_ciagu << " " << Max_dlugosc + 1 << endl;
+    cout << "4_3:" << najcz_litera << " " << Max_powtorek + 1 << endl;
     cout << "4_4: "<< slowo << endl;
 
     return 0;
