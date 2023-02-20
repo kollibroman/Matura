@@ -58,6 +58,7 @@ int main()
                     ciagi_instrukcji.push_back(komendy[j]);
 
                     litery.push_back(temp.back());
+                    
                }
                else if(j == 1)
                {
