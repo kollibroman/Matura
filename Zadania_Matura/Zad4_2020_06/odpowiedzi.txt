@@ -1,0 +1,200 @@
+4.2: 
+d 1
+4.2: 
+tt 2
+4.2: 
+a 1
+4.2: 
+lllllll 7
+4.2: 
+ooooo 5
+4.2: 
+wwwwww 6
+4.2: 
+aaaaaaaaaaa 11
+4.2: 
+jj 2
+4.2: 
+aaaaaaaaaaaa 12
+4.2: 
+ttt 3
+4.2: 
+qqq 3
+4.2: 
+uu 2
+4.2: 
+s 1
+4.2: 
+pppp 4
+4.2: 
+sssssssssssss 13
+4.2: 
+ww 2
+4.2: 
+mm 2
+4.2: 
+ddddd 5
+4.2: 
+ss 2
+4.2: 
+ll 2
+4.2: 
+xxx 3
+4.2: 
+ttttt 5
+4.2: 
+hhhhhhhhh 9
+4.2: 
+ggggggg 7
+4.2: 
+pppp 4
+4.2: 
+w 1
+4.2: 
+kkkkkkkkk 9
+4.2: 
+8 1
+4.2: 
+x 1
+4.2: 
+z 1
+4.2: 
+ttttttt 7
+4.2: 
+c 1
+4.2: 
+tttttttttttt 12
+4.2: 
+yyyyyyyyyyyy 12
+4.2: 
+ccc 3
+4.2: 
+j 1
+4.2: 
+aaaaa 5
+4.2: 
+a 1
+4.2: 
+r 1
+4.2: 
+gg 2
+4.2: 
+zzzzzzzz 8
+4.2: 
+jj 2
+4.2: 
+oooooooooooooooo 16
+4.2: 
+ppppp 5
+4.2: 
+dddddd 6
+4.2: 
+pppp 4
+4.2: 
+x 1
+4.2: 
+pppp 4
+4.2: 
+d 1
+4.2: 
+sssss 5
+4.2: 
+aaaaaaa 7
+4.2: 
+pppp 4
+4.2: 
+kkkkkkkk 8
+4.2: 
+wwwwww 6
+4.2: 
+xxxx 4
+4.2: 
+s 1
+4.2: 
+gggg 4
+4.2: 
+bb 2
+4.2: 
+4 1
+4.2: 
+o 1
+4.2: 
+mmmmm 5
+4.2: 
+aaaaaaa 7
+4.2: 
+l 1
+4.2: 
+llll 4
+4.2: 
+ggggg 5
+4.2: 
+aaaaa 5
+4.2: 
+jjjjjjjjjj 10
+4.2: 
+a 1
+4.2: 
+jj 2
+4.2: 
+kkkkk 5
+4.2: 
+d 1
+4.2: 
+kkkkk 5
+4.2: 
+eee 3
+4.2: 
+tttttttttt 10
+4.2: 
+bbb 3
+4.2: 
+uuuuuuuuuu 10
+4.2: 
+dddd 4
+4.2: 
+ggggggggg 9
+4.2: 
+lll 3
+4.2: 
+ttttttttttttttttttttttttttttttttt 33
+4.2: 
+i 1
+4.2: 
+fffff 5
+4.2: 
+dd 2
+4.2: 
+bb 2
+4.2: 
+a 1
+4.2: 
+h 1
+4.2: 
+hh 2
+4.2: 
+aaaa 4
+4.2: 
+dddddddd 8
+4.2: 
+ee 2
+4.2: 
+d 1
+4.2: 
+rrrrrrrrrrrrrr 14
+4.2: 
+jjjjjjj 7
+4.2: 
+n 1
+4.2: 
+aaaaaaa 7
+4.2: 
+s 1
+4.2: 
+a 1
+4.2: 
+uuuu 4
+4.2: 
+jj 2
+4.2: 
+d 1
