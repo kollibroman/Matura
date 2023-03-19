@@ -1,8 +1,8 @@
-a.out
 palindorm
 silnia
 *.exe
 .vs
 *.obj
-.vscode/c_cpp_properties.json
 Misc/output/
+.vscode/c_cpp_properties.json
+*.out

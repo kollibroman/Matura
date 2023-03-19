@@ -3,120 +3,68 @@
 #include<vector>
 using namespace std;
 
-bool czy_przysta(int x)
+int suma_p(int n)
 {
-    if(x % 2 == 0)
+    if(n == 4)
+    {
+        return 2;
+    }
+
+    int k = 3;
+
+    while(k <= n/2 && !(pierwsza(k) && pierwsza(n-k)))
+    {
+        k += 2;
+    }
+
+    return k;
+}
+
+bool pierwsza(int n)
+{
+    int i = 2;
+
+    while (i*i <= n && n % i != 0)
+    {
+        i++;
+    }
+
+    if(i*i > n)
     {
         return true;
     }
-    return false;
-}
-
-void sito(bool *tab, unsigned int n)
-{
-    for (int i = 0; i*i <= n; i++)
+    
+    else 
     {
-        if (!tab[i])
-        {
-            for(int j = i*i; j <= n; j += i)
-            {
-                tab[j] = 1;
-            }
-        }
+        return false;
     }
 }
 
 int main()
 {
     string linia;
-    vector<string> liczby;
 
-    vector<int> liczby1;
-    vector<int> liczby2;
+    vector<int> liczby;
+    vector<string> litery;
 
-    vector<string> liczby3;
-    vector<string> liczby4;
-
-    int Max_1 = 0;
-    int Max_2 = 0;
-    int Max_r = 0;
-
-    bool *tab;
-    vector<int> pierwsze;
-
-    tab = new bool[101];
-
-    for (int i = 0; i <= 100; i++)
-    {
-        tab[i] = 0;
-    }
-
-    sito(tab, 100);
-
-    for(int i = 2; i <= 100; i++)
-    {
-        if(!tab[i])
-        {
-            pierwsze.push_back(i);
-        }
-    }
-
-    delete []tab;
+    int n = 0;
 
     ifstream plik("przyklad.txt");
 
     while(!plik.eof())
     {
-        getline(plik, linia);
+        plik >> liczby[n] >> litery[n];
+        n++;
+    }
 
-        if(linia != "")
+    for (int i = 0; i < liczby.size(); i++)
+    {
+        if(liczby[i] % 2 == 0)
         {
-            liczby.push_back(linia);
+            int k = suma_p(liczba[i]);
         }
     }
     
-    for (int i = 0; i < liczby.size(); i++)
-    {
-        string temp = liczby[i];
-
-        string liczba = temp.substr(0, 1);
-        if(temp.substr(1, 1) != "")
-        {
-            liczba += temp[1];
-        }
-        
-        int int_liczba = stoi(liczba);
-
-        if(int_liczba > 4)
-        {
-            for(int j = 0; j < pierwsze.size(); j++)
-            {
-                int temp1 = pierwsze[j];
-
-                for(int k = 0; k < pierwsze.size(); k++)
-                {
-                    int temp2 = pierwsze[k];
-
-                    if(temp1 + temp2 == int_liczba)
-                    {
-                       liczby1.push_back(temp1);
-                       liczby2.push_back(temp2); 
-                    }
-
-                    for(int l = 0; l < liczby1.size(); l++)
-                    {
-                        if(abs(liczby1[l] - liczby2[l]) > Max_r)
-                        {
-                            Max_r = abs(liczby1[l] - liczby2[l]);
-                            Max_1 = liczby1[l];
-                            Max_2 = liczby2[l];
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     return 0;
-
 }
