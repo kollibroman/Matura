@@ -8,7 +8,8 @@ using namespace std;
 int silnia(int n)
 {
     int silnia = 1;
-    for (int i = 0; i <= n; i++)
+
+    for (int i = 1; i <= n; i++)
     {
         silnia *= i;
     }
@@ -16,13 +17,24 @@ int silnia(int n)
     return silnia;
 }
 
+int suma_silnii(string str)
+{
+    int suma = 0;
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        suma += silnia(stoi(str.substr(i, 1)));
+    }
+    
+    return suma;
+}
+
 int main()
 {
     string linia;
     vector<int> liczby;
-    vector<string> silniowe_l;
     vector<int> _odp;
-    ifstream plik("przyklad.txt");
+    ifstream plik("liczby.txt");
 
     int licznik_poteg = 0;
     int temp_sil = 0;
@@ -33,7 +45,6 @@ int main()
 
         if(linia != "")
         {
-            silniowe_l.push_back(linia);
             liczby.push_back(stoi(linia));
         }
     }
@@ -51,26 +62,20 @@ int main()
     }
 
     //4.2
-    for (int i = 0; i < silniowe_l.size(); i++)
+    for (int i = 0; i < liczby.size(); i++)
     {
-        string temp = silniowe_l[i];
+        int temp = liczby[i];
 
-        for(int j = 0; j < temp.length(); j++)
+        if (suma_silnii(to_string(temp)) == temp)
         {
-            temp_sil += silnia(temp[i]);
-
-            if(temp_sil == stoi(temp))
-            {
-                _odp.push_back(temp_sil);
-            }
+            _odp.push_back(temp);
         }
-
-        temp_sil = 0;
     }
     
         
     cout << "4.1" << " " << licznik_poteg << endl;
     cout << "4.2" << endl;
+
     for (int i = 0; i < _odp.size(); i++)
     {
         cout << _odp[i] << endl;
