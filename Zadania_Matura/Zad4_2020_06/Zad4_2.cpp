@@ -60,8 +60,6 @@ int main()
             }
         }
 
-        of_plik << "4.2: " << endl;
-
         if(Max_Ciag == 0)
         {
             if(temp.substr(1, 1) == " ")

@@ -93,12 +93,14 @@ int main()
             
             if(-para1.liczba < para2.liczba)
             {
-                najmn_para = para1;
+                najmn_para.liczba = para1.liczba;
+                najmn_para.litery = para1.litery;
             }
 
             else if(-para1.liczba == para2.liczba && para1.litery < para2.litery)
             {
-                najmn_para = para1;
+                najmn_para.liczba = para1.liczba;
+                najmn_para.litery = para1.litery;
             }
         }
     }
