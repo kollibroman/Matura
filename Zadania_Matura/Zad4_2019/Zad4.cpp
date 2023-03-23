@@ -29,15 +29,58 @@ int suma_silnii(string str)
     return suma;
 }
 
+int NWD(int x, int y)
+{
+    while(x != y)
+    {
+        if(x > y)
+        {
+            x -= y;
+        }
+        else 
+        {
+            y -= x;
+        }
+    }
+
+    return x;
+}
+
+int NWD_ciag(vector<int> vec)
+{
+    for (int i = 1; i < vec.size(); i++)
+    {
+        while(vec[i] != vec[i - 1])
+        {
+            if(vec[i] > vec[i - 1])
+            {
+                vec[i] -= vec[i - 1];
+            }
+
+            else
+            {
+                vec[i - 1] -= vec[i];
+            }
+        }
+    }   
+}
+
 int main()
 {
     string linia;
     vector<int> liczby;
     vector<int> _odp;
-    ifstream plik("liczby.txt");
+    ifstream plik("przyklad.txt");
 
     int licznik_poteg = 0;
-    int temp_sil = 0;
+    int ciag = 0;
+
+    int Max_ciag;
+    int Max_dziel;
+
+    int dzielnik;
+
+    vector<int> ciag_l;
 
     while (!plik.eof())
     {
@@ -49,6 +92,8 @@ int main()
         }
     }
 
+    plik.close();
+    
     //4.1
     for (int i = 0; i <= liczby.size(); i++)
     {
@@ -71,6 +116,18 @@ int main()
             _odp.push_back(temp);
         }
     }
+
+    for(int i = 1; i < liczby.size(); i++)
+    {   
+        
+
+        if(ciag > Max_ciag)
+        {
+            Max_ciag = ciag;
+        }
+
+        ciag = 0;
+    }
     
         
     cout << "4.1" << " " << licznik_poteg << endl;
@@ -80,6 +137,8 @@ int main()
     {
         cout << _odp[i] << endl;
     }
+
+    cout << "4.3" << " " << Max_ciag << " " << Max_dziel << endl;
     
     return 0;
 }
