@@ -44,7 +44,7 @@ int main()
     vector<string> liczby;
 
     ifstream plik("liczby.txt");
-    ofstream plik2("odp.txt");
+    ofstream plik2("wyniki4.txt");
 
     vector<int> podzielne_odbicia;
 
@@ -108,8 +108,6 @@ int main()
 
     for(int i = 0; i < liczby.size(); i++)
     {
-        plik2 << liczby[i] << endl;
-
         if(liczby[i] != liczby[i + 1])
         {
             rozne++;
@@ -127,24 +125,23 @@ int main()
        
     }
 
-    plik2.close();
-
-    cout << "4.1" << endl;
+    plik2 << "4.1" << endl;
 
     for (int i = 0; i < podzielne_odbicia.size(); i++)
     {
-        cout << podzielne_odbicia[i] << endl;
+        plik2 << podzielne_odbicia[i] << endl;
     }
 
-    cout << "4.2" << " " << Max_liczba << " " << Max_roznica << endl;
+    plik2 << "4.2" << " " << Max_liczba << " " << Max_roznica << endl;
 
-    cout << "4.3" << endl;
+    plik2 << "4.3" << endl;
 
     for(int i = 0; i < liczba.size(); i++)
     {
-        cout << liczba[i] << " " << odbicie[i] << endl;
+        plik2 << liczba[i] << " " << odbicie[i] << endl;
     }
 
-    cout << "4.4" << " " << rozne << " " << podwojne << " " << potrojne << endl;
+    plik2 << "4.4" << " " << rozne << " " << podwojne << " " << potrojne << endl;
+    plik2.close();
     return 0;
 }

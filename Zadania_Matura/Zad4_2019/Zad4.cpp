@@ -75,8 +75,9 @@ int main()
     int licznik_poteg = 0;
     int ciag = 0;
 
-    int Max_ciag;
-    int Max_dziel;
+    int Max_ciag = 0;
+    int Max_dziel = 0;
+    int Max_pierwsza;
 
     int dzielnik;
 
@@ -119,14 +120,28 @@ int main()
 
     for(int i = 1; i < liczby.size(); i++)
     {   
-        
+        int temp = liczby[i];
+        int dl = 1;
 
-        if(ciag > Max_ciag)
+        for(int j = i+1; j < liczby.size(); j++)
         {
-            Max_ciag = ciag;
-        }
+            temp = NWD(temp, liczby[j]);
+            if(temp > 1)
+            {
+                dl++;
+            }
+            else
+            {
+                break;
+            }
 
-        ciag = 0;
+            if(dl>Max_ciag)
+            {
+                Max_ciag = dl;
+                Max_dziel = temp;
+                Max_pierwsza = liczby[i - Max_ciag + 1];
+            }
+        }
     }
     
         
@@ -138,7 +153,7 @@ int main()
         cout << _odp[i] << endl;
     }
 
-    cout << "4.3" << " " << Max_ciag << " " << Max_dziel << endl;
+    cout << "4.3" << " " << Max_ciag << " " << Max_dziel << " " << Max_pierwsza << endl;
     
     return 0;
 }
