@@ -112,18 +112,24 @@ int main()
         {
             rozne++;
         }
+    }
 
-        else if(i != 0 && liczby[i] == liczby[i - 1])
+    for (int i = 0; i < liczby.size(); i++)
+    {
+        if(i != 0 && liczby[i] == liczby[i + 1] && liczby[i] != liczby[i - 1] && liczby[i] != liczby[i + 2])
         {
             podwojne++;
-        }
+        }       
+    }
 
-        else if(liczby[i] == liczby[i + 1] && liczby[i] == liczby[i + 2])
+    for (int i = 0; i < liczby.size(); i++)
+    {
+        if(liczby[i] == liczby[i + 1] && liczby[i] == liczby[i + 2])
         {
             potrojne++;
         }
-       
     }
+    
 
     plik2 << "4.1" << endl;
 
