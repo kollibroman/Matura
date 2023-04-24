@@ -2,36 +2,6 @@
 #include<fstream>
 #include<vector>
 
-bool czy_palindrom(std::string str)
-{
-    std::string add_first = str[0] + str;
-    std::string add_last = str[49] + str;
-
-    std::string reverse1;
-    std::string reverse2;
-
-    for (int i = add_first.length() - 1; i >= 0; i--)
-    {
-        reverse1 += add_first[i];
-        reverse2 += add_last[i];
-    }
-    
-    if(reverse1 == add_first)
-    {
-        return true;
-    }
-
-    if(reverse2 == add_last)
-    {
-        return true;
-    }
-
-    // std::cout << add_first << std::endl;
-    // std::cout << add_last << std::endl;
-
-    return false;
-}
-
 std::vector<int> pogrupowane_cyfry(std::vector<std::string> vec_str)
 {
     std::vector<int> grupy;
@@ -75,6 +45,7 @@ int main()
     std::vector<std::string> napisy;
 
     std::ifstream plik("napisy.txt");
+    std::ofstream wyniki("wyniki.txt");
 
     int cyferki = 0;
     int dwudziestki = 0;
@@ -122,16 +93,6 @@ int main()
         }
     }
 
-    for (int i = 0; i < napisy.size(); i++)
-    {
-        std::string temp2 = napisy[i];
-
-        if(czy_palindrom(temp2))
-        {
-           haslo2 += temp2[25];
-        }
-    }
-
     grupy = pogrupowane_cyfry(napisy);
     
     for(int i = 0; i < grupy.size(); i++)
@@ -146,6 +107,9 @@ int main()
             haslo3 += char(grupy[i]);
         }
     }
+
+    plik.close();
+    wyniki.close();
 
     std::cout << "4.1:" << " " << cyferki << std::endl;
     std::cout << "4.2:" << " " << haslo << std::endl;
