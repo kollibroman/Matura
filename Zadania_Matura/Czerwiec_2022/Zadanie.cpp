@@ -2,6 +2,8 @@
 #include<fstream>
 #include<vector>
 #include<algorithm>
+#include<string>
+
 using namespace std;
 
 bool czy_podzielne_17(int n)
@@ -13,7 +15,7 @@ bool czy_podzielne_17(int n)
 
     return false;
 }
-
+   
 string Odwrocona_liczba(string str)
 {
     string reverse_str = "";
