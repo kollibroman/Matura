@@ -2,6 +2,11 @@
 #include<fstream>
 #include<vector>
 
+int liczba_segmetow(std::vector<int> vec)
+{
+    return (vec.back() * (vec.back() + 1)) / 2;
+}
+
 int main()
 {
     std::string linia;
@@ -9,6 +14,8 @@ int main()
     std::ifstream plik("dane1_3.txt");
 
     std::vector<int> liczby;
+
+    int suma = 0;
 
     while(!plik.eof())
     {
@@ -20,7 +27,12 @@ int main()
         }
     }
 
-    
+    for(int i = 0; i < liczby.size(); i++)
+    {
+        
+    }
+
+    std::cout << suma << std::endl;
 
     return 0;
 }
