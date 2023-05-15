@@ -2,10 +2,11 @@
 #include<fstream>
 #include<vector>
 #include<algorithm>
+#include<string>
 
 bool odleglosc(char x, char y)
 {
-    if(abs(x - y) <= 10)
+    if(abs(int(x) - int(y)) <= 10)
     {
         return true;
     }
@@ -13,10 +14,21 @@ bool odleglosc(char x, char y)
     return false;
 }
 
+bool allEqual(std::vector<bool> v)
+{
+    for (int i = 0; i < v.size(); i++)
+    {
+        if (v[0] != v[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
     std::string linia;
-    std::ifstream plik("przyklad.txt");
+    std::ifstream plik("sygnaly.txt");
 
     std::vector<std::string> sygnaly;
     std::vector<bool> logika;
@@ -36,19 +48,21 @@ int main()
     {
         auto temp = sygnaly[i];
 
-        for (int i = 1; i < temp.length(); i++)
+        for (int j = 0; j < temp.length(); j++)
         {
-            if(odleglosc(temp[i], temp[i - 1]))
+            for (int k = 0; k < temp.length(); k++)
             {
-                logika.push_back(true);
-            }
-            else
-            {
-                logika.push_back(false);
+                if (odleglosc(temp[j], temp[k])) {
+                    logika.push_back(odleglosc(temp[j], temp[k]));
+                }
+                else
+                {
+                    logika.push_back(false);
+                }
             }
         }
         
-        if(std::all_of(logika.begin(), logika.end(), [](bool v){ return v; }))
+        if(allEqual(logika))
         {
             prawdziwe.push_back(temp);
         }
