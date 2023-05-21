@@ -2,7 +2,7 @@
 #include<vector>
 #include<cmath>
 
-const int MAX = 10000;
+const int MAX = 100;
 
 std::vector<int> primes;
 
@@ -37,5 +37,10 @@ void sieveSundaram()
             primes.push_back(2*i + 1);
         }
     }
+}
+
+int main()
+{
+    
 }
 

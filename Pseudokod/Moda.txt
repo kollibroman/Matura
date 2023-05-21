@@ -1,0 +1,19 @@
+Sortuj(T[n])
+dla i = 1,2,3,...,n
+	jeżeli T[i] > T[i+1]
+		s <- T[i]
+		T[i] <- T[i+1]
+		T[i+1] <- s
+
+Moda(T[n])
+k <- 0
+maks <- 0
+dla i=1,2,3...n
+	jeżeli  T[i] = T[i+1]
+		k <- k+1
+	w przeciwnym wypdadku:
+		jeżeli k > maks
+			maks <- k
+			m <- T[i]
+		k <- 0
+zwróć m
